@@ -21,12 +21,9 @@ public class ClientsController(AppDbContext db) : Controller
                 Email = c.Email,
                 Birthdate = c.Birthdate,
                 OrdersCount = c.Orders.Count(),
-                AvgOrderAmount =
-                    (from o in _db.Orders
-                     join p in _db.Products on o.ProductId equals p.Id
-                     where o.ClientId == c.Id
-                     select (decimal?)o.Quantity * p.Price
-                    ).Average()
+                AvgOrderAmount = c.Orders.Any()
+                ? c.Orders.Average(o => (decimal?)(o.Product!.Price * o.Quantity))
+                : 0
             })
             .ToListAsync();
 

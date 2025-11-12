@@ -27,7 +27,7 @@ public class OrdersController(AppDbContext db) : Controller
         return View(model);
     }
 
-    private void FillSelects(object? selectedClientId = null, object? selectedProductId = null)
+    private void FillSelects(int? selectedClientId = null, int? selectedProductId = null)
     {
         ViewBag.ClientId = new SelectList(_db.Clients.AsNoTracking(), nameof(Client.Id), nameof(Client.Name), selectedClientId);
         ViewBag.ProductId = new SelectList(_db.Products.AsNoTracking(), nameof(Product.Id), nameof(Product.Title), selectedProductId);
