@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TaskAsp.ViewModels.OrderList>
+
+<h2>Orders</h2>
+<p><a asp-action="Create" class="btn btn-primary">Create Order</a></p>
+
+<table class="table">
+    <thead>
+        <tr><th>Product</th><th>Quantity</th><th>Amount</th><th>Status</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.ProductTitle</td>
+                <td>@o.Quantity</td>
+                <td>@o.OrderAmount.ToString("0.00")</td>
+                <td>@o.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@o.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@o.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

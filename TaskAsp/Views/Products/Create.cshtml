@@ -1,0 +1,22 @@
+﻿@model TaskAsp.Models.Product
+<h2>Create Product</h2>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Code" class="form-label"></label>
+        <input asp-for="Code" class="form-control" />
+        <span asp-validation-for="Code" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <button class="btn btn-success" type="submit">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+<partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />

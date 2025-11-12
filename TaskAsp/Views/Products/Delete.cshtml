@@ -1,0 +1,18 @@
+﻿@model TaskAsp.Models.Product
+
+<h2>Delete Product</h2>
+
+<div class="alert alert-warning">
+    <p>Are you sure you want to delete this product?</p>
+    <ul>
+        <li><strong>Code:</strong> @Model.Code</li>
+        <li><strong>Title:</strong> @Model.Title</li>
+        <li><strong>Price:</strong> @Model.Price.ToString("0.00")</li>
+    </ul>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
