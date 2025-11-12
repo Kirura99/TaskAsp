@@ -10,10 +10,10 @@ Full **CRUD** for:
   -  Products 
   -  Orders
     
-Validatio with DataAnnotations and client-side scripts
-LINQ
-Cascade delete  when a client is deleted, all their orders are removed
-MVC architecture
+Validatio with DataAnnotations and client-side scripts.
+LINQ.
+Cascade delete  when a client is deleted, all their orders are removed.
+MVC architecture.
 
 **Technologies**
 C# / .NET 9
@@ -24,12 +24,12 @@ Bootstrap 5
 jQuery Validate (client-side form validation)
 
 HOW TO RUN:
-git clone https://github.com/yourusername/TaskAsp.git
-cd TaskAsp
-dotnet restore
-dotnet ef migrations add Init
-dotnet ef database update
-dotnet run
+-git clone https://github.com/yourusername/TaskAsp.git
+-cd TaskAsp
+-dotnet restore
+-dotnet ef migrations add Init
+-dotnet ef database update
+-dotnet run
 
 <img width="1645" height="561" alt="image" src="https://github.com/user-attachments/assets/267dfd58-5e50-49a6-b528-1db221292904" />
 
