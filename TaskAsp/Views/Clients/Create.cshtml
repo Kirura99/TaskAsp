@@ -25,4 +25,6 @@
     <button class="btn btn-success" type="submit">Save</button>
     <a asp-action="Index" class="btn btn-secondary">Back</a>
 </form>
-<partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -17,6 +17,7 @@ public class OrdersController(AppDbContext db) : Controller
             .Select(o => new OrderList
             {
                 Id = o.Id,
+                ClientName = o.Client!.Name,
                 ProductTitle = o.Product!.Title,
                 Quantity = o.Quantity,
                 OrderAmount = o.Product.Price * o.Quantity,
